@@ -111,6 +111,7 @@ def find_word(s, hash_table):
             new_index = (new_index + step) % table_size
             if new_index == index:
                 return False
+    return False
 
 
 def is_reducible(s, hash_table, hash_memo):
@@ -190,7 +191,7 @@ def main():
     # then M is a prime number that is slightly greater than
     # 0.2 * size of word_list
     hash_memo = []
-    mum = (0.2 * list_len) + 1
+    mum = int(0.2 * list_len) + 1
     while not is_prime(mum):
         mum += 1
     # populate the hash_memo with M blank strings
